@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/JavaWebServicesApplication/LoginApp/LoginApp.iml" filepath="$PROJECT_DIR$/JavaWebServicesApplication/LoginApp/LoginApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JavaWebServicesApplication/SimpleLoginApplication/SimpleLoginApplication.iml" filepath="$PROJECT_DIR$/JavaWebServicesApplication/SimpleLoginApplication/SimpleLoginApplication.iml" />
+    </modules>
+  </component>
+</project>

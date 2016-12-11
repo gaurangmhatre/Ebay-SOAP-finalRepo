@@ -1,0 +1,42 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CalculateService WSDL service -->
+
+  <service name="Calculate" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://calculator.com"/>
+      <parameter name="wsdlServiceElement" value="CalculateService"/>
+      <parameter name="schemaQualified" value="http://calculator.com"/>
+      <parameter name="wsdlServicePort" value="Calculate"/>
+      <parameter name="className" value="com.calculator.CalculateSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="Calculate"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="add" qname="operNS:add" xmlns:operNS="http://calculator.com" returnQName="retNS:addReturn" xmlns:retNS="http://calculator.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:number1" xmlns:pns="http://calculator.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:number2" xmlns:pns="http://calculator.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="divide" qname="operNS:divide" xmlns:operNS="http://calculator.com" returnQName="retNS:divideReturn" xmlns:retNS="http://calculator.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:number1" xmlns:pns="http://calculator.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:number2" xmlns:pns="http://calculator.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="subtract" qname="operNS:subtract" xmlns:operNS="http://calculator.com" returnQName="retNS:subtractReturn" xmlns:retNS="http://calculator.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:number1" xmlns:pns="http://calculator.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:number2" xmlns:pns="http://calculator.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="multiply" qname="operNS:multiply" xmlns:operNS="http://calculator.com" returnQName="retNS:multiplyReturn" xmlns:retNS="http://calculator.com" returnType="rtns:float" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:number1" xmlns:pns="http://calculator.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:number2" xmlns:pns="http://calculator.com" type="tns:float" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="add subtract divide multiply"/>
+
+  </service>
+</deployment>
