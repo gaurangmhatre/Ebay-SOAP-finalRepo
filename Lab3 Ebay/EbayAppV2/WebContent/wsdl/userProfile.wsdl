@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ebay.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ebay.com" xmlns:intf="http://ebay.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ebay.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getUserAccountDetails">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getUserAccountDetailsResponse">
+    <complexType>
+     <sequence>
+      <element name="getUserAccountDetailsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllSoldProducts">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllSoldProductsResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllSoldProductsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllProductsInCart">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllProductsInCartResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllProductsInCartReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllUserDirectBuyingActivities">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllUserDirectBuyingActivitiesResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllUserDirectBuyingActivitiesReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllWonAuctions">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllWonAuctionsResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllWonAuctionsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllAuctionProductHistory">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllAuctionProductHistoryResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllAuctionProductHistoryReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeItemFromCart">
+    <complexType>
+     <sequence>
+      <element name="userid" type="xsd:int"/>
+      <element name="itemid" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeItemFromCartResponse">
+    <complexType>
+     <sequence>
+      <element name="removeItemFromCartReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllUserBiddingActivity">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllUserBiddingActivityResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllUserBiddingActivityReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllProductsInCartForCheckOut1">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllProductsInCartForCheckOut1Response">
+    <complexType>
+     <sequence>
+      <element name="getAllProductsInCartForCheckOut1Return" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getAllProductsInCartForCheckOut1Request">
+
+      <wsdl:part element="impl:getAllProductsInCartForCheckOut1" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllProductsInCartForCheckOut1Response">
+
+      <wsdl:part element="impl:getAllProductsInCartForCheckOut1Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllAuctionProductHistoryRequest">
+
+      <wsdl:part element="impl:getAllAuctionProductHistory" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllUserBiddingActivityRequest">
+
+      <wsdl:part element="impl:getAllUserBiddingActivity" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllUserBiddingActivityResponse">
+
+      <wsdl:part element="impl:getAllUserBiddingActivityResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllProductsInCartRequest">
+
+      <wsdl:part element="impl:getAllProductsInCart" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserAccountDetailsRequest">
+
+      <wsdl:part element="impl:getUserAccountDetails" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllSoldProductsRequest">
+
+      <wsdl:part element="impl:getAllSoldProducts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllWonAuctionsRequest">
+
+      <wsdl:part element="impl:getAllWonAuctions" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getUserAccountDetailsResponse">
+
+      <wsdl:part element="impl:getUserAccountDetailsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllSoldProductsResponse">
+
+      <wsdl:part element="impl:getAllSoldProductsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllProductsInCartResponse">
+
+      <wsdl:part element="impl:getAllProductsInCartResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeItemFromCartRequest">
+
+      <wsdl:part element="impl:removeItemFromCart" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllWonAuctionsResponse">
+
+      <wsdl:part element="impl:getAllWonAuctionsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllAuctionProductHistoryResponse">
+
+      <wsdl:part element="impl:getAllAuctionProductHistoryResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllUserDirectBuyingActivitiesRequest">
+
+      <wsdl:part element="impl:getAllUserDirectBuyingActivities" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeItemFromCartResponse">
+
+      <wsdl:part element="impl:removeItemFromCartResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllUserDirectBuyingActivitiesResponse">
+
+      <wsdl:part element="impl:getAllUserDirectBuyingActivitiesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="userProfile">
+
+      <wsdl:operation name="getUserAccountDetails">
+
+         <wsdl:input message="impl:getUserAccountDetailsRequest" name="getUserAccountDetailsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getUserAccountDetailsResponse" name="getUserAccountDetailsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllSoldProducts">
+
+         <wsdl:input message="impl:getAllSoldProductsRequest" name="getAllSoldProductsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllSoldProductsResponse" name="getAllSoldProductsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllProductsInCart">
+
+         <wsdl:input message="impl:getAllProductsInCartRequest" name="getAllProductsInCartRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllProductsInCartResponse" name="getAllProductsInCartResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllUserDirectBuyingActivities">
+
+         <wsdl:input message="impl:getAllUserDirectBuyingActivitiesRequest" name="getAllUserDirectBuyingActivitiesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllUserDirectBuyingActivitiesResponse" name="getAllUserDirectBuyingActivitiesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllWonAuctions">
+
+         <wsdl:input message="impl:getAllWonAuctionsRequest" name="getAllWonAuctionsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllWonAuctionsResponse" name="getAllWonAuctionsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllAuctionProductHistory">
+
+         <wsdl:input message="impl:getAllAuctionProductHistoryRequest" name="getAllAuctionProductHistoryRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllAuctionProductHistoryResponse" name="getAllAuctionProductHistoryResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeItemFromCart">
+
+         <wsdl:input message="impl:removeItemFromCartRequest" name="removeItemFromCartRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeItemFromCartResponse" name="removeItemFromCartResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllUserBiddingActivity">
+
+         <wsdl:input message="impl:getAllUserBiddingActivityRequest" name="getAllUserBiddingActivityRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllUserBiddingActivityResponse" name="getAllUserBiddingActivityResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllProductsInCartForCheckOut1">
+
+         <wsdl:input message="impl:getAllProductsInCartForCheckOut1Request" name="getAllProductsInCartForCheckOut1Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllProductsInCartForCheckOut1Response" name="getAllProductsInCartForCheckOut1Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="userProfileSoapBinding" type="impl:userProfile">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getUserAccountDetails">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getUserAccountDetailsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getUserAccountDetailsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllSoldProducts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllSoldProductsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllSoldProductsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllProductsInCart">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllProductsInCartRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllProductsInCartResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllUserDirectBuyingActivities">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllUserDirectBuyingActivitiesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllUserDirectBuyingActivitiesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllWonAuctions">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllWonAuctionsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllWonAuctionsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllAuctionProductHistory">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllAuctionProductHistoryRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllAuctionProductHistoryResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeItemFromCart">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeItemFromCartRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeItemFromCartResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllUserBiddingActivity">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllUserBiddingActivityRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllUserBiddingActivityResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllProductsInCartForCheckOut1">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllProductsInCartForCheckOut1Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllProductsInCartForCheckOut1Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="userProfileService">
+
+      <wsdl:port binding="impl:userProfileSoapBinding" name="userProfile">
+
+         <wsdlsoap:address location="http://localhost:8080/EbayAppV2/services/userProfile"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ebay.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ebay.com" xmlns:intf="http://ebay.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ebay.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getAllProducts">
+    <complexType/>
+   </element>
+   <element name="getAllProductsResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllProductsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="userAddToCart">
+    <complexType>
+     <sequence>
+      <element name="ItemId" type="xsd:string"/>
+      <element name="Qty" type="xsd:string"/>
+      <element name="UserId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="userAddToCartResponse">
+    <complexType>
+     <sequence>
+      <element name="userAddToCartReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="AddItemToSoldTable">
+    <complexType>
+     <sequence>
+      <element name="ItemId" type="xsd:string"/>
+      <element name="UserId" type="xsd:string"/>
+      <element name="creditCardNumber" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="AddItemToSoldTableResponse">
+    <complexType>
+     <sequence>
+      <element name="AddItemToSoldTableReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateItemQty">
+    <complexType>
+     <sequence>
+      <element name="ItemId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateItemQtyResponse">
+    <complexType>
+     <sequence>
+      <element name="updateItemQtyReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removingItemFromCart">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+      <element name="ItemId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removingItemFromCartResponse">
+    <complexType>
+     <sequence>
+      <element name="removingItemFromCartReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getAllProductsForAuction">
+    <complexType/>
+   </element>
+   <element name="getAllProductsForAuctionResponse">
+    <complexType>
+     <sequence>
+      <element name="getAllProductsForAuctionReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addProduct">
+    <complexType>
+     <sequence>
+      <element name="ItemName" type="xsd:string"/>
+      <element name="ItemDescription" type="xsd:string"/>
+      <element name="ItemTypeId" type="xsd:string"/>
+      <element name="SellerId" type="xsd:string"/>
+      <element name="Price" type="xsd:string"/>
+      <element name="Qty" type="xsd:string"/>
+      <element name="IsBidItem" type="xsd:string"/>
+      <element name="Sold" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addProductResponse">
+    <complexType>
+     <sequence>
+      <element name="addProductReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="removingItemFromCartResponse">
+
+      <wsdl:part element="impl:removingItemFromCartResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="userAddToCartRequest">
+
+      <wsdl:part element="impl:userAddToCart" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addProductResponse">
+
+      <wsdl:part element="impl:addProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllProductsForAuctionResponse">
+
+      <wsdl:part element="impl:getAllProductsForAuctionResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addProductRequest">
+
+      <wsdl:part element="impl:addProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllProductsResponse">
+
+      <wsdl:part element="impl:getAllProductsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllProductsRequest">
+
+      <wsdl:part element="impl:getAllProducts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateItemQtyRequest">
+
+      <wsdl:part element="impl:updateItemQty" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateItemQtyResponse">
+
+      <wsdl:part element="impl:updateItemQtyResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAllProductsForAuctionRequest">
+
+      <wsdl:part element="impl:getAllProductsForAuction" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="userAddToCartResponse">
+
+      <wsdl:part element="impl:userAddToCartResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="AddItemToSoldTableRequest">
+
+      <wsdl:part element="impl:AddItemToSoldTable" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removingItemFromCartRequest">
+
+      <wsdl:part element="impl:removingItemFromCart" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="AddItemToSoldTableResponse">
+
+      <wsdl:part element="impl:AddItemToSoldTableResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="product">
+
+      <wsdl:operation name="getAllProducts">
+
+         <wsdl:input message="impl:getAllProductsRequest" name="getAllProductsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllProductsResponse" name="getAllProductsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="userAddToCart">
+
+         <wsdl:input message="impl:userAddToCartRequest" name="userAddToCartRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:userAddToCartResponse" name="userAddToCartResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AddItemToSoldTable">
+
+         <wsdl:input message="impl:AddItemToSoldTableRequest" name="AddItemToSoldTableRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:AddItemToSoldTableResponse" name="AddItemToSoldTableResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateItemQty">
+
+         <wsdl:input message="impl:updateItemQtyRequest" name="updateItemQtyRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateItemQtyResponse" name="updateItemQtyResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removingItemFromCart">
+
+         <wsdl:input message="impl:removingItemFromCartRequest" name="removingItemFromCartRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removingItemFromCartResponse" name="removingItemFromCartResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllProductsForAuction">
+
+         <wsdl:input message="impl:getAllProductsForAuctionRequest" name="getAllProductsForAuctionRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getAllProductsForAuctionResponse" name="getAllProductsForAuctionResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addProduct">
+
+         <wsdl:input message="impl:addProductRequest" name="addProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addProductResponse" name="addProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="productSoapBinding" type="impl:product">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAllProducts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllProductsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllProductsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="userAddToCart">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="userAddToCartRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="userAddToCartResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="AddItemToSoldTable">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="AddItemToSoldTableRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="AddItemToSoldTableResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateItemQty">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateItemQtyRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateItemQtyResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removingItemFromCart">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removingItemFromCartRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removingItemFromCartResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getAllProductsForAuction">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAllProductsForAuctionRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAllProductsForAuctionResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="productService">
+
+      <wsdl:port binding="impl:productSoapBinding" name="product">
+
+         <wsdlsoap:address location="http://localhost:8080/EbayAppV2/services/product"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

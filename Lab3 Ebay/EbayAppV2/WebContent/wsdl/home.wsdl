@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ebay.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ebay.com" xmlns:intf="http://ebay.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ebay.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="login">
+    <complexType>
+     <sequence>
+      <element name="email" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="loginResponse">
+    <complexType>
+     <sequence>
+      <element name="loginReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="checkSignUp">
+    <complexType>
+     <sequence>
+      <element name="emailid" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="checkSignUpResponse">
+    <complexType>
+     <sequence>
+      <element name="checkSignUpReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addLastLogin">
+    <complexType>
+     <sequence>
+      <element name="userId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addLastLoginResponse">
+    <complexType>
+     <sequence>
+      <element name="addLastLoginReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="afterSignUp">
+    <complexType>
+     <sequence>
+      <element name="firstname" type="xsd:string"/>
+      <element name="lastname" type="xsd:string"/>
+      <element name="email" type="xsd:string"/>
+      <element name="hash" type="xsd:string"/>
+      <element name="location" type="xsd:string"/>
+      <element name="creditCardNumber" type="xsd:string"/>
+      <element name="dateOfBirth" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="afterSignUpResponse">
+    <complexType>
+     <sequence>
+      <element name="afterSignUpReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addLastLoginResponse">
+
+      <wsdl:part element="impl:addLastLoginResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="afterSignUpRequest">
+
+      <wsdl:part element="impl:afterSignUp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="checkSignUpRequest">
+
+      <wsdl:part element="impl:checkSignUp" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addLastLoginRequest">
+
+      <wsdl:part element="impl:addLastLogin" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="afterSignUpResponse">
+
+      <wsdl:part element="impl:afterSignUpResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginRequest">
+
+      <wsdl:part element="impl:login" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="loginResponse">
+
+      <wsdl:part element="impl:loginResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="checkSignUpResponse">
+
+      <wsdl:part element="impl:checkSignUpResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="home">
+
+      <wsdl:operation name="login">
+
+         <wsdl:input message="impl:loginRequest" name="loginRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:loginResponse" name="loginResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkSignUp">
+
+         <wsdl:input message="impl:checkSignUpRequest" name="checkSignUpRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:checkSignUpResponse" name="checkSignUpResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addLastLogin">
+
+         <wsdl:input message="impl:addLastLoginRequest" name="addLastLoginRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addLastLoginResponse" name="addLastLoginResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="afterSignUp">
+
+         <wsdl:input message="impl:afterSignUpRequest" name="afterSignUpRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:afterSignUpResponse" name="afterSignUpResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="homeSoapBinding" type="impl:home">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="login">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="loginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="loginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="checkSignUp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="checkSignUpRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="checkSignUpResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addLastLogin">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addLastLoginRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addLastLoginResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="afterSignUp">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="afterSignUpRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="afterSignUpResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="homeService">
+
+      <wsdl:port binding="impl:homeSoapBinding" name="home">
+
+         <wsdlsoap:address location="http://localhost:8080/EbayAppV2/services/home"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

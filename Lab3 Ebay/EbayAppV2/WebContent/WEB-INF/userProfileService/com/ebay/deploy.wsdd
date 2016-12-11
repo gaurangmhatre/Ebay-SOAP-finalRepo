@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from userProfileService WSDL service -->
+
+  <service name="userProfile" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ebay.com"/>
+      <parameter name="wsdlServiceElement" value="userProfileService"/>
+      <parameter name="schemaQualified" value="http://ebay.com"/>
+      <parameter name="wsdlServicePort" value="userProfile"/>
+      <parameter name="className" value="com.ebay.userProfile"/>
+      <parameter name="wsdlPortType" value="userProfile"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://ebay.com" xmlns:retNS="http://ebay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getUserAccountDetails" qname="operNS:getUserAccountDetails" returnQName="retNS:getUserAccountDetailsReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ebay.com" xmlns:retNS="http://ebay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllSoldProducts" qname="operNS:getAllSoldProducts" returnQName="retNS:getAllSoldProductsReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ebay.com" xmlns:retNS="http://ebay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllProductsInCart" qname="operNS:getAllProductsInCart" returnQName="retNS:getAllProductsInCartReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ebay.com" xmlns:retNS="http://ebay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllUserDirectBuyingActivities" qname="operNS:getAllUserDirectBuyingActivities" returnQName="retNS:getAllUserDirectBuyingActivitiesReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ebay.com" xmlns:retNS="http://ebay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllWonAuctions" qname="operNS:getAllWonAuctions" returnQName="retNS:getAllWonAuctionsReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ebay.com" xmlns:retNS="http://ebay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllAuctionProductHistory" qname="operNS:getAllAuctionProductHistory" returnQName="retNS:getAllAuctionProductHistoryReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ebay.com" xmlns:retNS="http://ebay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="removeItemFromCart" qname="operNS:removeItemFromCart" returnQName="retNS:removeItemFromCartReturn" returnType="rtns:int" soapAction="">
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userid" type="tns:int"/>
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:itemid" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://ebay.com" xmlns:retNS="http://ebay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllUserBiddingActivity" qname="operNS:getAllUserBiddingActivity" returnQName="retNS:getAllUserBiddingActivityReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userId" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://ebay.com" xmlns:retNS="http://ebay.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getAllProductsInCartForCheckOut1" qname="operNS:getAllProductsInCartForCheckOut1" returnQName="retNS:getAllProductsInCartForCheckOut1Return" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://ebay.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:userId" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="getAllWonAuctions getUserAccountDetails getAllProductsInCartForCheckOut1 getAllUserBiddingActivity getAllProductsInCart getAllUserDirectBuyingActivities getAllAuctionProductHistory getAllSoldProducts removeItemFromCart"/>
+
+  </service>
+</deployment>
